@@ -47,7 +47,7 @@ tape( 'main export is a function', function test( t ) {
 
 tape( 'if a native implementation is available, the main export is the native implementation', opts, function test( t ) {
 	var fcn = proxyquire( './../lib', {
-		'@stdlib/utils/try-require': tryRequire
+		'@stdlib/utils-try-require': tryRequire
 	});
 
 	t.strictEqual( fcn, mock, 'returns native implementation' );
@@ -69,7 +69,7 @@ tape( 'if a native implementation is not available, the main export is a JavaScr
 	main = require( './../lib/main.js' );
 
 	fcn = proxyquire( './../lib', {
-		'@stdlib/utils/try-require': tryRequire
+		'@stdlib/utils-try-require': tryRequire
 	});
 
 	t.strictEqual( fcn, main, 'returns JavaScript implementation' );
