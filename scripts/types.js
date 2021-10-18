@@ -20,18 +20,32 @@
 
 // MODULES //
 
-var setProps = require( '@stdlib/ndarray-base-meta-data-props' );
-var meta = require( './meta.json' );
-var types = require( './types.json' );
-var abs = require( './abs.native.js' );
+var resolve = require( 'path' ).resolve;
+var writeFile = require( '@stdlib/fs-write-file' ).sync;
+var types = require( './../lib/types.js' );
+
+
+// VARIABLES //
+
+var OPTS = {
+	'encoding': 'utf8'
+};
+var FPATH = resolve( __dirname, '..', 'lib', 'types.json' );
 
 
 // MAIN //
 
-setProps( meta, types, abs );
-setProps( meta, types, abs.assign );
+/**
+* Main execution sequence.
+*
+* @private
+* @throws {Error} unexpected error
+*/
+function main() {
+	var err = writeFile( FPATH, JSON.stringify( types )+'\n', OPTS );
+	if ( err ) {
+		throw err;
+	}
+}
 
-
-// EXPORTS //
-
-module.exports = abs;
+main();
