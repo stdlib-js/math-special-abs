@@ -45,32 +45,30 @@ The [absolute value][absolute-value] is defined as
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-special-abs
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-abs = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@umd/bundle.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@umd/bundle.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.abs;
-})();
-</script>
+var abs = require( '@stdlib/math-special-abs' );
 ```
 
 #### abs( x\[, options] )
@@ -178,16 +176,11 @@ TODO: broadcasting discussion and example(s).
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@umd/bundle.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@umd/bundle.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ind2sub@umd/bundle.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@umd/bundle.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var Float64Array = require( '@stdlib/array-float64' );
+var array = require( '@stdlib/ndarray-array' );
+var ind2sub = require( '@stdlib/ndarray-ind2sub' );
+var abs = require( '@stdlib/math-special-abs' );
 
 // Provide a number...
 var v = abs( -1.0 );
@@ -212,11 +205,6 @@ for ( i = 0; i < x.length; i++ ) {
     sub = ind2sub( sh, i );
     console.log( 'x_%d%d = %d => abs(x_%d%d) = %d', sub[ 0 ], sub[ 1 ], x.iget( i ), sub[ 0 ], sub[ 1 ], y.iget( i ) );
 }
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -265,7 +253,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -304,16 +292,17 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [deno-url]: https://github.com/stdlib-js/math-special-abs/tree/deno
 [umd-url]: https://github.com/stdlib-js/math-special-abs/tree/umd
 [esm-url]: https://github.com/stdlib-js/math-special-abs/tree/esm
+[branches-url]: https://github.com/stdlib-js/math-special-abs/blob/main/branches.md
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/math-special-abs/main/LICENSE
 
 [absolute-value]: https://en.wikipedia.org/wiki/Absolute_value
 
-[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor/tree/umd
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 
-[@stdlib/ndarray/orders]: https://github.com/stdlib-js/ndarray-orders/tree/umd
+[@stdlib/ndarray/orders]: https://github.com/stdlib-js/ndarray-orders
 
-[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes/tree/umd
+[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes
 
 </section>
 
