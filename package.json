@@ -41,10 +41,10 @@
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
   "dependencies": {
-    "@stdlib/math-base-special-abs": "^0.1.0",
-    "@stdlib/math-base-special-absf": "^0.1.0",
-    "@stdlib/math-base-special-identity": "^0.1.0",
-    "@stdlib/math-base-special-labs": "^0.1.0",
+    "@stdlib/math-base-special-abs": "^0.1.1",
+    "@stdlib/math-base-special-absf": "^0.1.1",
+    "@stdlib/math-base-special-identity": "^0.1.1",
+    "@stdlib/math-base-special-labs": "^0.1.1",
     "@stdlib/math-strided-special-abs": "^0.1.0",
     "@stdlib/math-tools-unary": "^0.1.0",
     "@stdlib/ndarray-base-function-object": "^0.1.0",
@@ -58,8 +58,8 @@
     "@stdlib/utils-try-require": "^0.1.1"
   },
   "devDependencies": {
-    "@stdlib/array-float32": "^0.1.0",
-    "@stdlib/array-float64": "^0.1.0",
+    "@stdlib/array-float32": "^0.1.1",
+    "@stdlib/array-float64": "^0.1.1",
     "@stdlib/assert-has-property": "^0.1.1",
     "@stdlib/assert-is-browser": "^0.1.1",
     "@stdlib/assert-is-typed-array-like": "^0.1.0",
@@ -73,7 +73,7 @@
     "@stdlib/ndarray-base-serialize-meta-data": "^0.1.0",
     "@stdlib/ndarray-base-shape2strides": "^0.1.1",
     "@stdlib/ndarray-ctor": "^0.1.0",
-    "@stdlib/ndarray-ind2sub": "^0.1.0",
+    "@stdlib/ndarray-ind2sub": "^0.1.1",
     "@stdlib/random-base-uniform": "^0.1.0",
     "proxyquire": "^2.0.0",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
