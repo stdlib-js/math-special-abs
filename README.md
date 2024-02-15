@@ -67,7 +67,7 @@ The [absolute value][absolute-value] is defined as
 ## Usage
 
 ```javascript
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@esm/index.mjs';
+import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@v0.2.0-esm/index.mjs';
 ```
 
 #### abs( x\[, options] )
@@ -184,7 +184,7 @@ TODO: broadcasting discussion and example(s).
 import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
 import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
 import ind2sub from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ind2sub@esm/index.mjs';
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@esm/index.mjs';
+import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@v0.2.0-esm/index.mjs';
 
 // Provide a number...
 var v = abs( -1.0 );
