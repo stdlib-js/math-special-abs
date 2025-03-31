@@ -43,7 +43,6 @@
   "dependencies": {
     "@stdlib/math-base-special-abs": "^0.2.2",
     "@stdlib/math-base-special-absf": "^0.2.2",
-    "@stdlib/math-base-special-identity": "^0.2.2",
     "@stdlib/math-base-special-labs": "^0.2.2",
     "@stdlib/math-strided-special-abs": "^0.2.2",
     "@stdlib/math-tools-unary": "^0.2.2",
@@ -53,6 +52,7 @@
     "@stdlib/ndarray-base-unary": "^0.2.1",
     "@stdlib/ndarray-dispatch": "^0.2.2",
     "@stdlib/ndarray-dtypes": "^0.3.0",
+    "@stdlib/number-float64-base-identity": "github:stdlib-js/number-float64-base-identity#main",
     "@stdlib/types": "^0.4.3",
     "@stdlib/utils-library-manifest": "^0.2.2",
     "@stdlib/utils-try-require": "^0.2.2"
