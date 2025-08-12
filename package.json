@@ -55,7 +55,8 @@
     "@stdlib/number-float64-base-identity": "github:stdlib-js/number-float64-base-identity#main",
     "@stdlib/types": "^0.4.3",
     "@stdlib/utils-library-manifest": "^0.2.2",
-    "@stdlib/utils-try-require": "^0.2.2"
+    "@stdlib/utils-try-require": "^0.2.2",
+    "@stdlib/error-tools-fmtprodmsg": "^0.2.2"
   },
   "devDependencies": {
     "@stdlib/array-float32": "^0.2.2",
