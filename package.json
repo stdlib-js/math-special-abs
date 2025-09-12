@@ -107,14 +107,14 @@
     "stdmath",
     "mathematics",
     "math",
-    "math.abs",
+    "ndarray",
+    "elementwise",
+    "element-wise",
     "abs",
     "absolute",
     "magnitude",
     "value",
-    "ndarray",
-    "elementwise",
-    "element-wise"
+    "math.abs"
   ],
   "__stdlib__": {},
   "funding": {
