@@ -1,0 +1,8 @@
+"use strict";var i=function(x,s){return function(){return s||x((s={exports:{}}).exports,s),s.exports}};var d=i(function(K,U){U.exports={nargs:2,nin:1,nout:1}});var y=i(function(L,p){
+var t=require('@stdlib/math-base-special-abs/dist'),h=require('@stdlib/math-base-special-absf/dist'),r=require('@stdlib/math-base-special-labs/dist'),u=require('@stdlib/math-base-special-cabs/dist'),E=require('@stdlib/math-base-special-cabsf/dist'),v=require('@stdlib/number-uint32-base-identity/dist'),a=require('@stdlib/number-uint16-base-identity/dist'),e=require('@stdlib/number-uint8-base-identity/dist'),P=[t,t,h,t,t,t,u,u,E,u,u,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,v,v,v,a,a,a,a,a,a,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e];p.exports=P
+});var _=i(function(M,R){R.exports=[12,12,12,17,11,11,11,12,11,17,17,17,15,12,15,17,14,11,14,12,14,17,6,6,6,7,6,12,6,17,4,4,4,6,4,5,4,7,4,11,4,12,4,17,1,1,1,4,1,6,1,2,1,3,1,5,1,7,1,11,1,12,1,17,7,7,7,12,7,17,5,6,5,5,5,7,5,11,5,12,5,17,2,4,2,6,2,2,2,3,2,5,2,7,2,11,2,12,2,17,3,4,3,6,3,2,3,3,3,5,3,7,3,11,3,12,3,17]});var g=i(function(N,k){k.exports={output:"real_and_generic",casting:"none"}});var m=i(function(O,l){
+var w=require('@stdlib/ndarray-dispatch/dist'),b=require('@stdlib/ndarray-dtypes/dist'),z=require('@stdlib/ndarray-base-unary/dist'),A=require('@stdlib/math-tools-unary/dist'),f=require('@stdlib/ndarray-base-meta-data-props/dist'),n=d(),B=y(),q=_(),C=g(),D=b("numeric_and_generic"),F=b("real_and_generic"),c=A(w(z,q,B,n.nargs,n.nin,n.nout),[D],F,C);f(n,q,c);f(n,q,c.assign);l.exports=c
+});var G=require("path").join,H=require('@stdlib/utils-try-require/dist'),I=m(),o,j=H(G(__dirname,"./native.js"));j instanceof Error?o=I:o=j;module.exports=o;
+/** @license Apache-2.0 */
+/** @license Apache-2.0 */
+//# sourceMappingURL=index.js.map
