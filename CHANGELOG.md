@@ -6,6 +6,16 @@
 
 ## Unreleased (2025-09-12)
 
+<section class="bug-fixes">
+
+### Bug Fixes
+
+-   [`280494a`](https://github.com/stdlib-js/stdlib/commit/280494ae7aa4394e84bcf9aaa2833698a0b6a82c) - ensure support for \"generic\" ndarrays
+
+</section>
+
+<!-- /.bug-fixes -->
+
 <section class="breaking-changes">
 
 ### BREAKING CHANGES
@@ -33,6 +43,7 @@
 
 <details>
 
+-   [`280494a`](https://github.com/stdlib-js/stdlib/commit/280494ae7aa4394e84bcf9aaa2833698a0b6a82c) - **fix:** ensure support for \"generic\" ndarrays _(by Athan Reines)_
 -   [`a2e3f27`](https://github.com/stdlib-js/stdlib/commit/a2e3f27361ab16d06646e4d08a3eb3f46821a678) - **refactor:** remove support for non-ndarray arguments _(by Athan Reines)_
 -   [`77867ac`](https://github.com/stdlib-js/stdlib/commit/77867ac1767a186023f633dea30ddf860962aaed) - **docs:** remove trailing whitespace _(by Philipp Burckhardt)_
 -   [`6eee151`](https://github.com/stdlib-js/stdlib/commit/6eee15199727d04e3757e66f38384e97b8a333da) - **style:** fix indentation in JSON files _(by Philipp Burckhardt)_
