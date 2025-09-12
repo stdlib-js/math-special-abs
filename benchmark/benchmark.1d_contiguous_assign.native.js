@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2020 The Stdlib Authors.
+* Copyright (c) 2021 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -20,18 +20,29 @@
 
 // MODULES //
 
+var resolve = require( 'path' ).resolve;
+var tryRequire = require( '@stdlib/utils-try-require' );
 var bench = require( '@stdlib/bench-harness' );
-var uniform = require( '@stdlib/random-base-uniform' ).factory;
+var uniform = require( '@stdlib/random-uniform' );
 var isnan = require( '@stdlib/math-base-assert-is-nan' );
 var pow = require( '@stdlib/math-base-special-pow' );
-var Float32Array = require( '@stdlib/array-float32' );
+var zeros = require( '@stdlib/ndarray-zeros' );
+var getData = require( '@stdlib/ndarray-data-buffer' );
+var format = require( '@stdlib/string-format' );
 var pkg = require( './../package.json' ).name;
-var abs = require( './../lib/main.js' );
 
 
 // VARIABLES //
 
-var rand = uniform( -100.0, 100.0 );
+var abs = tryRequire( resolve( __dirname, './../lib/native.js' ) );
+var opts = {
+	'skip': ( abs instanceof Error )
+};
+var DTYPES = [
+	'float64',
+	'float32',
+	'generic'
+];
 
 
 // FUNCTIONS //
@@ -40,17 +51,20 @@ var rand = uniform( -100.0, 100.0 );
 * Creates a benchmark function.
 *
 * @private
-* @param {PositiveInteger} len - array length
+* @param {PositiveInteger} size - array size
+* @param {string} dtype - data type
 * @returns {Function} benchmark function
 */
-function createBenchmark( len ) {
+function createBenchmark( size, dtype ) {
+	var options;
 	var x;
-	var i;
+	var y;
 
-	x = new Float32Array( len );
-	for ( i = 0; i < len; i++ ) {
-		x[ i ] = rand();
-	}
+	options = {
+		'dtype': dtype
+	};
+	x = uniform( [ size ], -10.0, 10.0, options );
+	y = zeros( [ size ], options );
 	return benchmark;
 
 	/**
@@ -60,18 +74,18 @@ function createBenchmark( len ) {
 	* @param {Benchmark} b - benchmark instance
 	*/
 	function benchmark( b ) {
-		var y;
+		var z;
 		var i;
 
 		b.tic();
 		for ( i = 0; i < b.iterations; i++ ) {
-			y = abs( x );
-			if ( isnan( y[ i%len ] ) ) {
-				b.fail( 'should not return NaN' );
+			z = abs.assign( x, y );
+			if ( typeof z !== 'object' ) {
+				b.fail( 'should return an ndarray' );
 			}
 		}
 		b.toc();
-		if ( isnan( y[ i%len ] ) ) {
+		if ( isnan( getData( z )[ i%size ] ) ) {
 			b.fail( 'should not return NaN' );
 		}
 		b.pass( 'benchmark finished' );
@@ -88,19 +102,24 @@ function createBenchmark( len ) {
 * @private
 */
 function main() {
-	var len;
+	var size;
 	var min;
 	var max;
+	var dt;
 	var f;
 	var i;
+	var j;
 
 	min = 1; // 10^min
 	max = 6; // 10^max
 
-	for ( i = min; i <= max; i++ ) {
-		len = pow( 10, i );
-		f = createBenchmark( len );
-		bench( pkg+'::array_like_object:contiguous=true,ndims=1,dtype=float32,len='+len, f );
+	for ( j = 0; j < DTYPES.length; j++ ) {
+		dt = DTYPES[ j ];
+		for ( i = min; i <= max; i++ ) {
+			size = pow( 10, i );
+			f = createBenchmark( size, dt );
+			bench( format( '%s::native:assign:contiguous=true,ndims=1,dtype=%s,size=%d', pkg, dt, size ), opts, f );
+		}
 	}
 }
 

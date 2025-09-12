@@ -4,7 +4,28 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-08-12)
+## Unreleased (2025-09-12)
+
+<section class="breaking-changes">
+
+### BREAKING CHANGES
+
+-   [`a2e3f27`](https://github.com/stdlib-js/stdlib/commit/a2e3f27361ab16d06646e4d08a3eb3f46821a678): remove support for non-ndarray arguments
+
+    -   To migrate, users should wrap non-ndarray arguments using
+        `@stdlib/ndarray-array` or `@stdlib/ndarray/from-scalar` which will
+        convert non-ndarray arguments to ndarrays. In general, if a user
+        is providing a number, a user is likely to want a number in return.
+        Similarly for built-in array types. So always returning an ndarray
+        is likely not what a user wants. This change essentially requires
+        users to be explicit about what implementation and behavior they
+        desire. If a user still wants to retain previous behavior, they
+        can write a thin wrapper a top the new API which performs delegation
+        based on whether an input argument is a scalar, array, or an ndarray.
+
+</section>
+
+<!-- /.breaking-changes -->
 
 <section class="commits">
 
@@ -12,6 +33,7 @@
 
 <details>
 
+-   [`a2e3f27`](https://github.com/stdlib-js/stdlib/commit/a2e3f27361ab16d06646e4d08a3eb3f46821a678) - **refactor:** remove support for non-ndarray arguments _(by Athan Reines)_
 -   [`77867ac`](https://github.com/stdlib-js/stdlib/commit/77867ac1767a186023f633dea30ddf860962aaed) - **docs:** remove trailing whitespace _(by Philipp Burckhardt)_
 -   [`6eee151`](https://github.com/stdlib-js/stdlib/commit/6eee15199727d04e3757e66f38384e97b8a333da) - **style:** fix indentation in JSON files _(by Philipp Burckhardt)_
 -   [`b20b024`](https://github.com/stdlib-js/stdlib/commit/b20b0247ea520b8f715d41851cb7b1fbfdf2122d) - **style:** fix indentation in JSON files _(by Philipp Burckhardt)_
