@@ -10,6 +10,7 @@
 
 ### Bug Fixes
 
+-   [`ece831b`](https://github.com/stdlib-js/stdlib/commit/ece831b187c2e9b9ee3d29b527b39b4005ee9fe8) - fallback to `assign` method
 -   [`280494a`](https://github.com/stdlib-js/stdlib/commit/280494ae7aa4394e84bcf9aaa2833698a0b6a82c) - ensure support for \"generic\" ndarrays
 
 </section>
@@ -43,6 +44,7 @@
 
 <details>
 
+-   [`ece831b`](https://github.com/stdlib-js/stdlib/commit/ece831b187c2e9b9ee3d29b527b39b4005ee9fe8) - **fix:** fallback to `assign` method _(by Athan Reines)_
 -   [`32598ec`](https://github.com/stdlib-js/stdlib/commit/32598ecb974bacd50b686118a78cf8d06f66f645) - **chore:** reorder keywords _(by Athan Reines)_
 -   [`7fae2b3`](https://github.com/stdlib-js/stdlib/commit/7fae2b3248e89e03711cad05025272325ecfa044) - **docs:** update description _(by Athan Reines)_
 -   [`3c7848b`](https://github.com/stdlib-js/stdlib/commit/3c7848b9132d720b08a8baefe90924c259e805cf) - **docs:** fix copy _(by Athan Reines)_
