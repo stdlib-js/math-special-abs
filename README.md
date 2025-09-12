@@ -33,26 +33,11 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> Compute the [absolute value][absolute-value].
+> Compute the [absolute value][@stdlib/math/base/special/abs] for each element in an [ndarray][@stdlib/ndarray/ctor].
 
 <!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
 
 <section class="intro">
-
-The [absolute value][absolute-value] is defined as
-
-<!-- <equation class="equation" label="eq:absolute_value" align="center" raw="|x| = \begin{cases} x & \textrm{if}\ x \geq 0 \\ -x & \textrm{if}\ x < 0\end{cases}" alt="Absolute value"> -->
-
-```math
-|x| = \begin{cases} x & \textrm{if}\ x \geq 0 \\ -x & \textrm{if}\ x < 0\end{cases}
-```
-
-<!-- <div class="equation" align="center" data-raw-text="|x| = \begin{cases} x &amp; \textrm{if}\ x \geq 0 \\ -x &amp; \textrm{if}\ x &lt; 0\end{cases}" data-equation="eq:absolute_value">
-    <img src="https://cdn.jsdelivr.net/gh/stdlib-js/stdlib@61c5f878886bd5b3b98976501c974bf69f575238/lib/node_modules/@stdlib/math/special/abs/docs/img/equation_absolute_value.svg" alt="Absolute value">
-    <br>
-</div> -->
-
-<!-- </equation> -->
 
 </section>
 
@@ -60,100 +45,145 @@ The [absolute value][absolute-value] is defined as
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-special-abs
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@esm/index.mjs';
+var abs = require( '@stdlib/math-special-abs' );
 ```
 
 #### abs( x\[, options] )
 
-Computes the [absolute value][absolute-value].
+Computes the [absolute value][@stdlib/math/base/special/abs] for each element in an [ndarray][@stdlib/ndarray/ctor].
 
 ```javascript
-var y = abs( -1.0 );
-// returns 1.0
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var array = require( '@stdlib/ndarray-array' );
+
+var x = array( [ [ -1.0, -2.0 ], [ -3.0, -4.0 ] ] );
+var y = abs( x );
+// returns <ndarray>
+
+var arr = ndarray2array( y );
+// returns [ [ 1.0, 2.0 ], [ 3.0, 4.0 ] ]
 ```
 
 The function accepts the following arguments:
 
--   **x**: input [`ndarray`][@stdlib/ndarray/ctor], array-like object, or number. If provided an [`ndarray`][@stdlib/ndarray/ctor] or array-like object, the function performs element-wise computation.
--   **options**: function options.
+-   **x**: input [ndarray][@stdlib/ndarray/ctor].
+-   **options**: function options (_optional_).
 
-If provided an [`ndarray`][@stdlib/ndarray/ctor], the function returns an [`ndarray`][@stdlib/ndarray/ctor] having the same shape and data type as `x`.
+The function accepts the following options:
+
+-   **dtype**: output ndarray [data type][@stdlib/ndarray/dtypes]. Must be a real-valued or generic [data type][@stdlib/ndarray/dtypes].
+-   **order**: output ndarray [order][@stdlib/ndarray/orders] (i.e., memory layout).
+
+By default, the function returns an [ndarray][@stdlib/ndarray/ctor] having a [data type][@stdlib/ndarray/dtypes] determined by the function's output data type [policy][@stdlib/ndarray/output-dtype-policies]. To override the default behavior, set the `dtype` option.
 
 ```javascript
-import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var array = require( '@stdlib/ndarray-array' );
+var getDType = require( '@stdlib/ndarray-dtype' );
 
-var x = array( [ [ -1.0, -2.0 ], [ -3.0, -4.0 ] ] ); // 2x2
-var y = abs( x );
+var x = array( [ [ -1.0, -2.0 ], [ -3.0, -4.0 ] ] );
+var y = abs( x, {
+    'dtype': 'generic'
+});
 // returns <ndarray>
 
-var v = y.get( 0, 1 );
-// returns 2.0
+var dt = getDType( y );
+// returns 'generic'
+
+var arr = ndarray2array( y );
+// returns [ [ 1.0, 2.0 ], [ 3.0, 4.0 ] ]
 ```
 
-If provided an array-like object, the function returns an array-like object having the same length and data type as `x`.
+By default, the function returns an [ndarray][@stdlib/ndarray/ctor] having the same [order][@stdlib/ndarray/orders] as the input [ndarray][@stdlib/ndarray/ctor]. To return an [ndarray][@stdlib/ndarray/ctor] having a specific memory layout irrespective of the memory layout of the input [ndarray][@stdlib/ndarray/ctor], set the `order` option.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var array = require( '@stdlib/ndarray-array' );
+var getOrder = require( '@stdlib/ndarray-order' );
 
-var x = new Float64Array( [ -1.0, -2.0 ] );
-var y = abs( x );
-// returns <Float64Array>[ 1.0, 2.0 ]
-
-x = [ -1.0, -2.0 ];
-y = abs( x );
-// returns [ 1.0, 2.0 ]
-```
-
-The function accepts the following `options`:
-
--   **dtype**: output array [data type][@stdlib/ndarray/dtypes]. Only applicable when `x` is either an [`ndarray`][@stdlib/ndarray/ctor] or array-like object. By default, the output array data type is inferred from the input array.
--   **order**: output array [order][@stdlib/ndarray/orders]. Only applicable when `x` is an [`ndarray`][@stdlib/ndarray/ctor]. By default, the output array order is inferred from the input array.
-
-By default, when provided either an [`ndarray`][@stdlib/ndarray/ctor] or an array-like object, the function returns an object of the same "kind" (either an [`ndarray`][@stdlib/ndarray/ctor] or array-like object, respectively) having the same underlying [data type][@stdlib/ndarray/dtypes]. To specify a different output array [data type][@stdlib/ndarray/dtypes], set the `dtype` option.
-
-```javascript
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
-
-var x = new Float32Array( [ -1.0, -2.0 ] );
-var y = abs( x );
-// returns <Float32Array>[ 1.0, 2.0 ]
-
-x = new Float32Array( [ -1.0, -2.0 ] );
-y = abs( x, {
-    'dtype': 'float64'
+var x = array( [ [ -1.0, -2.0 ], [ -3.0, -4.0 ] ] );
+var y = abs( x, {
+    'order': 'column-major'
 });
-// returns <Float64Array>[ 1.0, 2.0 ]
+// returns <ndarray>
+
+var ord = getOrder( y );
+// returns 'column-major'
+
+var arr = ndarray2array( y );
+// returns [ [ 1.0, 2.0 ], [ 3.0, 4.0 ] ]
 ```
 
 #### abs.assign( x, y )
 
-Computes the [absolute value][absolute-value] and assigns results to a provided output array.
+Computes the [absolute value][@stdlib/math/base/special/abs] for each element in an [ndarray][@stdlib/ndarray/ctor] and assigns results to a provided output [ndarray][@stdlib/ndarray/ctor].
 
 ```javascript
-import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var array = require( '@stdlib/ndarray-array' );
 
-var x = array( [ [ -1.0, -2.0 ], [ -3.0, -4.0 ] ] ); // 2x2
-var y = array( [ [ 0.0, 0.0 ], [ 0.0, 0.0 ] ] ); // 2x2
+var x = array( [ [ -1.0, -2.0 ], [ -3.0, -4.0 ] ] );
+var y = array( [ [ 0.0, 0.0 ], [ 0.0, 0.0 ] ] );
+
 var out = abs.assign( x, y );
 // returns <ndarray>
 
 var bool = ( out === y );
 // returns true
 
-var v = y.get( 0, 1 );
-// returns 2.0
+var arr = ndarray2array( out );
+// returns [ [ 1.0, 2.0 ], [ 3.0, 4.0 ] ]
 ```
 
-The output array must be the same data "kind" (i.e., [`ndarray`][@stdlib/ndarray/ctor] or array-like object) as the input array. For example, if `x` is an [`ndarray`][@stdlib/ndarray/ctor], `y` must also be an [`ndarray`][@stdlib/ndarray/ctor]. Similarly, if `x` is an array-like object, `y` must also be an array-like object.
+The function accepts the following arguments:
 
-TODO: broadcasting discussion and example(s).
+-   **x**: input [ndarray][@stdlib/ndarray/ctor]. Must have a shape which is [broadcast-compatible][@stdlib/ndarray/base/broadcast-shapes] with the shape of the output [ndarray][@stdlib/ndarray/ctor].
+-   **y**: output [ndarray][@stdlib/ndarray/ctor].
+
+The function supports broadcasting an input [ndarray][@stdlib/ndarray/ctor] to the shape of the output [ndarray][@stdlib/ndarray/ctor] without performing a physical copy of the input [ndarray][@stdlib/ndarray/ctor]'s underlying data.
+
+```javascript
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var zeros = require( '@stdlib/ndarray-zeros' );
+var array = require( '@stdlib/ndarray-array' );
+
+// Create a 2x2 input ndarray:
+var x = array( [ [ -1.0, -2.0 ], [ -3.0, -4.0 ] ] );
+
+// Create a 2x2x2 output ndarray:
+var y = zeros( [ 2, 2, 2 ] );
+
+var out = abs.assign( x, y );
+// returns <ndarray>
+
+var arr = ndarray2array( out );
+// returns [ [ [ 1.0, 2.0 ], [ 3.0, 4.0 ] ], [ [ 1.0, 2.0 ], [ 3.0, 4.0 ] ] ]
+```
 
 </section>
 
@@ -162,6 +192,10 @@ TODO: broadcasting discussion and example(s).
 <!-- Package usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
 <section class="notes">
+
+## Notes
+
+-   The output data type [policy][@stdlib/ndarray/output-dtype-policies] only applies to the main function and specifies that, by default, the function must return an [ndarray][@stdlib/ndarray/ctor] having a real-valued or "generic" [data type][@stdlib/ndarray/dtypes]. For the `assign` method, the output [ndarray][@stdlib/ndarray/ctor] is allowed to have any supported output [data type][@stdlib/ndarray/dtypes].
 
 </section>
 
@@ -175,44 +209,16 @@ TODO: broadcasting discussion and example(s).
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
+```javascript
+var uniform = require( '@stdlib/random-uniform' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var abs = require( '@stdlib/math-special-abs' );
 
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
-import ind2sub from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ind2sub@esm/index.mjs';
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@esm/index.mjs';
+var x = uniform( [ 5, 5 ], -10.0, 10.0 );
+console.log( ndarray2array( x ) );
 
-// Provide a number...
-var v = abs( -1.0 );
-console.log( 'x = %d => abs(x) = %d', -1.0, v );
-
-// Provide an array-like object...
-var x = new Float64Array( [ -1.0, -2.0, -3.0 ] );
 var y = abs( x );
-
-var i;
-for ( i = 0; i < x.length; i++ ) {
-    console.log( 'x_%d = %d => abs(x_%d) = %d', i, x[ i ], i, y[ i ] );
-}
-
-// Provide an ndarray...
-x = array( [ [ -1.0, -2.0 ], [ -3.0, -4.0 ] ] );
-y = abs( x );
-
-var sh = x.shape;
-var sub;
-for ( i = 0; i < x.length; i++ ) {
-    sub = ind2sub( sh, i );
-    console.log( 'x_%d%d = %d => abs(x_%d%d) = %d', sub[ 0 ], sub[ 1 ], x.iget( i ), sub[ 0 ], sub[ 1 ], y.iget( i ) );
-}
-
-</script>
-</body>
-</html>
+console.log( ndarray2array( y ) );
 ```
 
 </section>
@@ -244,7 +250,7 @@ for ( i = 0; i < x.length; i++ ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -307,13 +313,17 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/math-special-abs/main/LICENSE
 
-[absolute-value]: https://en.wikipedia.org/wiki/Absolute_value
+[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs
 
-[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor/tree/esm
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 
-[@stdlib/ndarray/orders]: https://github.com/stdlib-js/ndarray-orders/tree/esm
+[@stdlib/ndarray/orders]: https://github.com/stdlib-js/ndarray-orders
 
-[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes/tree/esm
+[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes
+
+[@stdlib/ndarray/output-dtype-policies]: https://github.com/stdlib-js/ndarray-output-dtype-policies
+
+[@stdlib/ndarray/base/broadcast-shapes]: https://github.com/stdlib-js/ndarray-base-broadcast-shapes
 
 </section>
 
