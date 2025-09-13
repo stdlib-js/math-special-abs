@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-09-12)
+## Unreleased (2025-09-13)
 
 <section class="bug-fixes">
 
@@ -44,6 +44,8 @@
 
 <details>
 
+-   [`c7229c9`](https://github.com/stdlib-js/stdlib/commit/c7229c91160851c316f4caefd6aea6e387621edd) - **refactor:** consolidate files _(by Athan Reines)_
+-   [`491ccba`](https://github.com/stdlib-js/stdlib/commit/491ccba47c32b20c1e90e468d6e187aa0583e8b8) - **refactor:** reorder imports _(by Athan Reines)_
 -   [`c63f610`](https://github.com/stdlib-js/stdlib/commit/c63f610323ce4a6a44f0d359525274bb174d5c76) - **refactor:** use add-on dispatch utility _(by Athan Reines)_
 -   [`ece831b`](https://github.com/stdlib-js/stdlib/commit/ece831b187c2e9b9ee3d29b527b39b4005ee9fe8) - **fix:** fallback to `assign` method _(by Athan Reines)_
 -   [`32598ec`](https://github.com/stdlib-js/stdlib/commit/32598ecb974bacd50b686118a78cf8d06f66f645) - **chore:** reorder keywords _(by Athan Reines)_
