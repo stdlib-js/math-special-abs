@@ -4,12 +4,13 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-09-13)
+## Unreleased (2025-09-21)
 
 <section class="bug-fixes">
 
 ### Bug Fixes
 
+-   [`3618307`](https://github.com/stdlib-js/stdlib/commit/3618307d26ce818f5c5f543a0ad22e24c319e4a7) - access enum values via data type objects
 -   [`ece831b`](https://github.com/stdlib-js/stdlib/commit/ece831b187c2e9b9ee3d29b527b39b4005ee9fe8) - fallback to `assign` method
 -   [`280494a`](https://github.com/stdlib-js/stdlib/commit/280494ae7aa4394e84bcf9aaa2833698a0b6a82c) - ensure support for \"generic\" ndarrays
 
@@ -44,6 +45,8 @@
 
 <details>
 
+-   [`3618307`](https://github.com/stdlib-js/stdlib/commit/3618307d26ce818f5c5f543a0ad22e24c319e4a7) - **fix:** access enum values via data type objects _(by Athan Reines)_
+-   [`3e48fcc`](https://github.com/stdlib-js/stdlib/commit/3e48fcc6bf6ad7ca53e1241bb6fb382d4684d977) - **docs:** update type _(by Athan Reines)_
 -   [`c7229c9`](https://github.com/stdlib-js/stdlib/commit/c7229c91160851c316f4caefd6aea6e387621edd) - **refactor:** consolidate files _(by Athan Reines)_
 -   [`491ccba`](https://github.com/stdlib-js/stdlib/commit/491ccba47c32b20c1e90e468d6e187aa0583e8b8) - **refactor:** reorder imports _(by Athan Reines)_
 -   [`c63f610`](https://github.com/stdlib-js/stdlib/commit/c63f610323ce4a6a44f0d359525274bb174d5c76) - **refactor:** use add-on dispatch utility _(by Athan Reines)_
