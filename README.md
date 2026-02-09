@@ -45,19 +45,32 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-special-abs
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@deno/mod.js';
-```
-The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-special-abs/tags). For example,
-
-```javascript
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@v0.3.0-deno/mod.js';
+var abs = require( '@stdlib/math-special-abs' );
 ```
 
 #### abs( x\[, options] )
@@ -65,8 +78,8 @@ import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@v0.3.0-d
 Computes the [absolute value][@stdlib/math/base/special/abs] for each element in an [ndarray][@stdlib/ndarray/ctor].
 
 ```javascript
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@deno/mod.js';
-import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@deno/mod.js';
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var array = require( '@stdlib/ndarray-array' );
 
 var x = array( [ [ -1.0, -2.0 ], [ -3.0, -4.0 ] ] );
 var y = abs( x );
@@ -89,9 +102,9 @@ The function accepts the following options:
 By default, the function returns an [ndarray][@stdlib/ndarray/ctor] having a [data type][@stdlib/ndarray/dtypes] determined by the function's output data type [policy][@stdlib/ndarray/output-dtype-policies]. To override the default behavior, set the `dtype` option.
 
 ```javascript
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@deno/mod.js';
-import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@deno/mod.js';
-import getDType from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-dtype@deno/mod.js';
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var array = require( '@stdlib/ndarray-array' );
+var getDType = require( '@stdlib/ndarray-dtype' );
 
 var x = array( [ [ -1.0, -2.0 ], [ -3.0, -4.0 ] ] );
 var y = abs( x, {
@@ -109,9 +122,9 @@ var arr = ndarray2array( y );
 By default, the function returns an [ndarray][@stdlib/ndarray/ctor] having the same [order][@stdlib/ndarray/orders] as the input [ndarray][@stdlib/ndarray/ctor]. To return an [ndarray][@stdlib/ndarray/ctor] having a specific memory layout irrespective of the memory layout of the input [ndarray][@stdlib/ndarray/ctor], set the `order` option.
 
 ```javascript
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@deno/mod.js';
-import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@deno/mod.js';
-import getOrder from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-order@deno/mod.js';
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var array = require( '@stdlib/ndarray-array' );
+var getOrder = require( '@stdlib/ndarray-order' );
 
 var x = array( [ [ -1.0, -2.0 ], [ -3.0, -4.0 ] ] );
 var y = abs( x, {
@@ -131,8 +144,8 @@ var arr = ndarray2array( y );
 Computes the [absolute value][@stdlib/math/base/special/abs] for each element in an [ndarray][@stdlib/ndarray/ctor] and assigns results to a provided output [ndarray][@stdlib/ndarray/ctor].
 
 ```javascript
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@deno/mod.js';
-import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@deno/mod.js';
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var array = require( '@stdlib/ndarray-array' );
 
 var x = array( [ [ -1.0, -2.0 ], [ -3.0, -4.0 ] ] );
 var y = array( [ [ 0.0, 0.0 ], [ 0.0, 0.0 ] ] );
@@ -155,9 +168,9 @@ The function accepts the following arguments:
 The function supports broadcasting an input [ndarray][@stdlib/ndarray/ctor] to the shape of the output [ndarray][@stdlib/ndarray/ctor] without performing a physical copy of the input [ndarray][@stdlib/ndarray/ctor]'s underlying data.
 
 ```javascript
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@deno/mod.js';
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros@deno/mod.js';
-import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@deno/mod.js';
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var zeros = require( '@stdlib/ndarray-zeros' );
+var array = require( '@stdlib/ndarray-array' );
 
 // Create a 2x2 input ndarray:
 var x = array( [ [ -1.0, -2.0 ], [ -3.0, -4.0 ] ] );
@@ -197,9 +210,9 @@ var arr = ndarray2array( out );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-uniform@deno/mod.js';
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@deno/mod.js';
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@deno/mod.js';
+var uniform = require( '@stdlib/random-uniform' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var abs = require( '@stdlib/math-special-abs' );
 
 var x = uniform( [ 5, 5 ], -10.0, 10.0 );
 console.log( ndarray2array( x ) );
@@ -237,7 +250,7 @@ console.log( ndarray2array( y ) );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -267,8 +280,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/math-special-abs.svg
 [npm-url]: https://npmjs.org/package/@stdlib/math-special-abs
 
-[test-image]: https://github.com/stdlib-js/math-special-abs/actions/workflows/test.yml/badge.svg?branch=v0.3.0
-[test-url]: https://github.com/stdlib-js/math-special-abs/actions/workflows/test.yml?query=branch:v0.3.0
+[test-image]: https://github.com/stdlib-js/math-special-abs/actions/workflows/test.yml/badge.svg?branch=v0.3.1
+[test-url]: https://github.com/stdlib-js/math-special-abs/actions/workflows/test.yml?query=branch:v0.3.1
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/math-special-abs/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/math-special-abs?branch=main
@@ -300,17 +313,17 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/math-special-abs/main/LICENSE
 
-[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs/tree/deno
+[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs
 
-[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor/tree/deno
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 
-[@stdlib/ndarray/orders]: https://github.com/stdlib-js/ndarray-orders/tree/deno
+[@stdlib/ndarray/orders]: https://github.com/stdlib-js/ndarray-orders
 
-[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes/tree/deno
+[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes
 
-[@stdlib/ndarray/output-dtype-policies]: https://github.com/stdlib-js/ndarray-output-dtype-policies/tree/deno
+[@stdlib/ndarray/output-dtype-policies]: https://github.com/stdlib-js/ndarray-output-dtype-policies
 
-[@stdlib/ndarray/base/broadcast-shapes]: https://github.com/stdlib-js/ndarray-base-broadcast-shapes/tree/deno
+[@stdlib/ndarray/base/broadcast-shapes]: https://github.com/stdlib-js/ndarray-base-broadcast-shapes
 
 </section>
 
