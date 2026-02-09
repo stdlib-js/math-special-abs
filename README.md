@@ -52,6 +52,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-special-abs/tags). For example,
+
+```javascript
 import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@v0.3.1-deno/mod.js';
 ```
 
@@ -194,7 +199,7 @@ var arr = ndarray2array( out );
 ```javascript
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-uniform@deno/mod.js';
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@deno/mod.js';
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@v0.3.1-deno/mod.js';
+import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@deno/mod.js';
 
 var x = uniform( [ 5, 5 ], -10.0, 10.0 );
 console.log( ndarray2array( x ) );
