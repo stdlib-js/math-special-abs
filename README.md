@@ -52,7 +52,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@esm/index.mjs';
+import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@v0.3.1-esm/index.mjs';
 ```
 
 #### abs( x\[, options] )
@@ -199,7 +199,7 @@ var arr = ndarray2array( out );
 
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-uniform@esm/index.mjs';
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@esm/index.mjs';
+import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@v0.3.1-esm/index.mjs';
 
 var x = uniform( [ 5, 5 ], -10.0, 10.0 );
 console.log( ndarray2array( x ) );
