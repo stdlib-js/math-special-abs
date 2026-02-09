@@ -52,6 +52,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-special-abs/tags). For example,
+
+```javascript
 import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@v0.3.1-esm/index.mjs';
 ```
 
@@ -199,7 +204,7 @@ var arr = ndarray2array( out );
 
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-uniform@esm/index.mjs';
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@v0.3.1-esm/index.mjs';
+import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-special-abs@esm/index.mjs';
 
 var x = uniform( [ 5, 5 ], -10.0, 10.0 );
 console.log( ndarray2array( x ) );
