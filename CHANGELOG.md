@@ -2,6 +2,40 @@
 
 > Package changelog.
 
+<section class="release" id="unreleased">
+
+## Unreleased (2026-02-24)
+
+<section class="commits">
+
+### Commits
+
+<details>
+
+-   [`ddc8202`](https://github.com/stdlib-js/stdlib/commit/ddc820270cfbdc5f88b832442bf62752bbdc2b78) - **docs:** improve doctests for ndarray instances in `math/special/abs` [(#10435)](https://github.com/stdlib-js/stdlib/pull/10435) _(by AyushiJain18270)_
+
+</details>
+
+</section>
+
+<!-- /.commits -->
+
+<section class="contributors">
+
+### Contributors
+
+A total of 1 person contributed to this release. Thank you to this contributor:
+
+-   AyushiJain18270
+
+</section>
+
+<!-- /.contributors -->
+
+</section>
+
+<!-- /.release -->
+
 <section class="release" id="v0.3.1">
 
 ## 0.3.1 (2026-02-08)
