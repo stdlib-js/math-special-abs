@@ -18,7 +18,7 @@
 
 // TypeScript Version: 4.1
 
-/// <reference types="@stdlib/types"/>
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
 
 import { typedndarray, realcomplexndarray, realndarray, genericndarray, RealAndGenericDataType as DataType, Order } from '@stdlib/types/ndarray';
 
