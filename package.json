@@ -56,7 +56,7 @@
     "@stdlib/number-uint16-base-identity": "^0.1.1",
     "@stdlib/number-uint32-base-identity": "^0.1.1",
     "@stdlib/number-uint8-base-identity": "^0.1.1",
-    "@stdlib/types": "^0.4.3",
+    "@stdlib/types": "^0.5.1",
     "@stdlib/utils-library-manifest": "^0.2.4",
     "@stdlib/utils-try-require": "^0.2.3"
   },
